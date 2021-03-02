@@ -1,3 +1,16 @@
+# React Gallery App
+
+## Technologies
+* JavaScript
+* JSX 
+* React 
+* React Router
+* Axios
+* CascadingStyleSheets
+
+## Introduction
+This project will use the React Library to create an image gallery app and Axios to fetch data from the Flickr API and display to the site.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
