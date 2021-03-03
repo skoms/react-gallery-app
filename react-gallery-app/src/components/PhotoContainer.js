@@ -3,27 +3,34 @@ import Photo from './Photo';
 import NotFound from './NotFound';
 
 class PhotoContainer extends Component {
+    componentDidMount() {
+        this.props.getPhotos(this.props.query);
+    }
+
     render() {
-        const { data } = this.props;
-        let photos;
-        if( data.length > 0 ) {
-            photos = data.map( img => <Photo server={img.server} id={img.id} secret={img.secret} />);
+        if(this.props.loading) {
+           return <p>Loading...</p>;
         } else {
-            photos = (
-                <li key="404">
-                    <NotFound />
-                </li>
+            const { data } = this.props;
+            let photos;
+            if( data.length > 0 ) {
+                photos = data.map( img => <Photo server={img.server} id={img.id} secret={img.secret} />);
+                photos = (
+                    <ul>
+                        { photos }
+                    </ul>
+                );
+            } else {
+                photos = (<NotFound />);
+            }
+            return (
+                <div className="photo-container">
+                    <h2>Results</h2>
+                        { photos }
+                </div>
             );
         }
-        return (
-            <div className="photo-container">
-                <h2>Results</h2>
-                <ul>
-                    { photos }
-                </ul>
-                
-            </div>
-        );
+        
         
     }
 }
