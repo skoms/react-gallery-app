@@ -5,16 +5,25 @@ import NotFound from './NotFound';
 class PhotoContainer extends Component {
     componentDidMount() {
         this.props.getPhotos(this.props.query);
+        console.log('mounted');
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.data === this.props.data && prevProps.query !== this.props.query) {
+            this.props.getPhotos(this.props.query);
+            console.log('update');
+        }
     }
 
     render() {
         if(this.props.loading) {
            return <p>Loading...</p>;
         } else {
+            console.log('new');
             const { data } = this.props;
             let photos;
             if( data.length > 0 ) {
-                photos = data.map( img => <Photo server={img.server} id={img.id} secret={img.secret} />);
+                photos = data.map( img => <Photo server={img.server} id={img.id} key={img.id} secret={img.secret} />);
                 photos = (
                     <ul>
                         { photos }
@@ -25,7 +34,7 @@ class PhotoContainer extends Component {
             }
             return (
                 <div className="photo-container">
-                    <h2>Results</h2>
+                    <h2>{this.props.query} photos</h2>
                         { photos }
                 </div>
             );

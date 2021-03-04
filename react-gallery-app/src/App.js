@@ -23,10 +23,12 @@ class App extends Component {
   };
 
   getPhotos(query = 'parrot') {
-      this.setState({
+      if(!this.state.loading) {
+        this.setState({
           loading: true
-      });
-      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&&tags=${query}&format=json&nojsoncallback=1`)
+        });
+      }
+      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&&tags=${query}&format=json&per_page=24&nojsoncallback=1`)
           .then((response => {
               console.log(response.data.photos.photo);
               this.setState({
@@ -39,7 +41,6 @@ class App extends Component {
           });
   }
 
-
   render() {
     return (
       <div className='container'>
@@ -48,7 +49,7 @@ class App extends Component {
             getPhotos={(query) => this.getPhotos(query)}
           />
           <Nav 
-            getPhotos={(query) => this.getPhotos(query)}
+            handleOnClick={(query) => this.handleOnClick(query)}
           />
           <Switch>
             <Redirect exact from="/" to="/cockatoo" />

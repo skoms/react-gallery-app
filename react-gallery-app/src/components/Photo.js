@@ -5,7 +5,7 @@ const Photo = (props) => {
         secret
     } = props
     return (
-        <li key={id}>
+        <li>
             <img src={`https://live.staticflickr.com/${server}/${id}_${secret}.jpg`} alt="" />
         </li>
     );
