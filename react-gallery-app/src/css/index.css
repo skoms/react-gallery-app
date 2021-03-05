@@ -24,6 +24,10 @@ a {
   color: #1f3a5c9f;
 }
 
+.skoms-dev-logo {
+  margin-top: -50px;
+}
+
 .search-form {
   max-width: 460px;
   display: flex;
@@ -68,6 +72,8 @@ input {
 .main-nav a:hover,
 .search-form button:hover {
   background-color: #348f6c;
+  box-shadow: #28cf8f 0 0 5px;
+  color: #11f3c2;
 }
 
 .photo-container ul {

@@ -1,6 +1,10 @@
 import NotFoundIcon from '../404icon.png';
 
-const RouteNotFound = (props) => {
+/**
+ * Declares the 'RouteNotFound' Component that will load when the route entered doesn't exist
+ * @returns {React Component} RouteNotFound - The 404 error displaying component
+ */
+const RouteNotFound = () => {
     return (
         <ul>
             <li className="not-found">

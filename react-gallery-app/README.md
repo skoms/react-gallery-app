@@ -9,7 +9,24 @@
 * CascadingStyleSheets
 
 ## Introduction
-This project will use the React Library to create an image gallery app and Axios to fetch data from the Flickr API and display to the site.
+This project will use the React Library to create React componends to build up an image gallery app and Axios to fetch data from the Flickr API and display to the site.
+
+### Component List 
+* App
+* Cockatoos
+* Eclectus
+* Loading
+* Macaws
+* Nav
+* Photo
+* PhotoContainer
+* RouteNotFound
+* Search
+* SearchForm
+* SearchNotFound
+
+### Styling
+* src/css/index.css
 
 # Getting Started with Create React App
 
