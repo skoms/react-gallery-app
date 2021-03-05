@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Photo from './Photo';
 import SearchNotFound from './SearchNotFound';
+import Loading from './Loading';
 
 class PhotoContainer extends Component {
     componentDidMount() {
@@ -17,7 +18,7 @@ class PhotoContainer extends Component {
 
     render() {
         if(this.props.loading) {
-           return <p>Loading...</p>;
+            return <Loading />;
         } else {
             console.log('new');
             const { data } = this.props;
