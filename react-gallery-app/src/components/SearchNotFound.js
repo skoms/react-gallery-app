@@ -1,4 +1,4 @@
-const NotFound = () => (
+const SearchNotFound = () => (
     <ul>
         <li class="not-found">
             <h3>No Results Found</h3>
@@ -7,4 +7,4 @@ const NotFound = () => (
     </ul>
 );
 
-export default NotFound;
+export default SearchNotFound;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Photo from './Photo';
-import NotFound from './NotFound';
+import SearchNotFound from './SearchNotFound';
 
 class PhotoContainer extends Component {
     componentDidMount() {
@@ -30,7 +30,7 @@ class PhotoContainer extends Component {
                     </ul>
                 );
             } else {
-                photos = (<NotFound />);
+                photos = (<SearchNotFound />);
             }
             return (
                 <div className="photo-container">

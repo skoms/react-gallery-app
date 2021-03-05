@@ -1,7 +1,8 @@
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  color: #3f4850;
+  color: #28cf8f;
+  background-color: #1a3252;
 }
 
 h2 {
@@ -19,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+::placeholder {
+  color: #1f3a5c9f;
+}
+
 .search-form {
   max-width: 460px;
   display: flex;
@@ -27,7 +32,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #28cf8f;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -37,9 +42,10 @@ a {
 input {
   font-size: 1em;
   width: 100%;
-  background-color: #edeff0;
+  background-color: #97d8bf;
   padding: 10px 15px;
-  border: 3px solid #d7dbdf;
+  border: 3px solid #28cf8f;
+  color: #1a3252;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
@@ -52,16 +58,16 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #28cf8f;
   border-radius: 3px;
   padding: 5px;
-  color: #fff;
+  color: #1a3252;
 }
 
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #348f6c;
 }
 
 .photo-container ul {
@@ -76,7 +82,12 @@ input {
   width: 220px;
   height: 165px;
   overflow: hidden;
+  border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.photo-container ul li:hover {
+  box-shadow: #28cf8f 0 0 10px 5px;
 }
 
 .photo-container ul img {

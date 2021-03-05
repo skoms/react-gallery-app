@@ -13,6 +13,7 @@ import Cockatoos from './components/Cockatoos';
 import Macaws from './components/Macaws';
 import Eclectus from './components/Eclectus';
 import Search from './components/Search';
+import RouteNotFound from './components/RouteNotFound';
 import apiKey from './config';
 
 class App extends Component {
@@ -74,13 +75,14 @@ class App extends Component {
                 getPhotos={(query) => this.getPhotos(query)}
               />
             )}/>
-            <Route path="/:query" render={() => (
+            <Route path="/search/:query" render={() => (
               <Search 
                 data={this.state.photos}
                 loading={this.state.loading}
                 getPhotos={(query) => this.getPhotos(query)}
               />
             )} />
+            <Route component={RouteNotFound}/>
           </Switch>
           
         </BrowserRouter>
